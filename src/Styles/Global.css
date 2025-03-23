@@ -1,0 +1,42 @@
+/* Global.css */
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Ajustes responsive para el formulario */
+  @media (max-width: 768px) {
+    .center-container {
+      padding: 10px;
+    }
+  
+    /* Ajustar labels para móviles */
+    .ant-form-item-label {
+      text-align: left !important;
+    }
+  
+    /* Hacer inputs full width en móviles */
+    .ant-form-item-control {
+      width: 100% !important;
+    }
+  
+    /* Ajustar botón para móviles */
+    .ant-btn {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    /* Reducir padding en tarjeta para móviles pequeños */
+    .ant-card {
+      margin: 0 10px;
+    }
+    
+    .ant-card-head-title {
+      font-size: 1.2rem;
+    }
+  }
