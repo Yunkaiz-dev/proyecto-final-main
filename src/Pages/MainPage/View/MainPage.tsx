@@ -1,6 +1,6 @@
 import React from 'react';
 import { Breadcrumb, Layout, Menu, theme, Carousel, Image, Typography, Card, Row, Col, Input} from 'antd';
-import '/Users/jean carlos/Desktop/Learning Progran/proyecto-final-main/src/Styles/global.css'
+import '/Users/Jose-PC/Downloads/proyecto Omar/src/Styles/global.css'
 import { Link  } from 'react-router-dom';
 
 const { Header, Content, Footer } = Layout;

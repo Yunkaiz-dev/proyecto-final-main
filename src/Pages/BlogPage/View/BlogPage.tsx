@@ -1,6 +1,6 @@
 import React from 'react';
 import { Layout, Menu, Typography, Input, Card, Image, Button, Row, Col } from 'antd';
-import '/Users/jean carlos/Desktop/Learning Progran/proyecto-final-main/src/Styles/Global.css';
+import '//Users/Jose-PC/Downloads/proyecto Omar/src/Styles/Global.css';
 import { Link, useNavigate } from 'react-router-dom';
 
 const { Header, Content, Footer } = Layout;

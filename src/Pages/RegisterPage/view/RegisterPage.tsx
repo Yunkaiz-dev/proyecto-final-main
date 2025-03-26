@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Checkbox, Form, Input, Select, Card } from 'antd';
-import '/Users/jean carlos/Desktop/Learning Progran/proyecto-final-main/src/Styles/Global.css'
+import '/Users/Jose-PC/Downloads/proyecto Omar/src/Styles/Global.css'
 
 
 
