@@ -1,5 +1,5 @@
 import React from 'react';
-import { Breadcrumb, Layout, Menu, theme, Carousel, Image, Typography, Input} from 'antd';
+import { Breadcrumb, Layout, Menu, theme, Carousel, Image, Typography, Card, Row, Col, Input} from 'antd';
 import '/Users/jean carlos/Desktop/Learning Progran/proyecto-final-main/src/Styles/global.css'
 import { Link  } from 'react-router-dom';
 
@@ -13,16 +13,51 @@ const items = Array.from({ length: 15 }).map((_, index) => ({
 }));
 
 const carouselImages = [
-  '/src/assets/images/yone-lol-splash-art-uhdpaper.com-8K-7.2287.jpg',
-  '/src/assets/images/cb298dc0-671b-4c02-9594-f6183c1d1b8f.png',
-  '/src/assets/images/cb298dc0-671b-4c02-9594-f6183c1d1b8f.png',
-  '/src/assets/images/how-to-make-mangu-DSC6702 (1).jpg'
+  '/src/assets/images/1.webp',
+  '/src/assets/images/2.webp',
+  '/src/assets/images/3.webp',
+  '/src/assets/images/4.webp'
 ];
+
+const recipes = [
+
+  {
+    id: 1,
+    title: 'Los Secretos del Sofrito Perfecto',
+    description: '"Aprende a preparar la base de sabores de la cocina dominicana: proporciones, técnicas y conservación."',
+    image: '/src/assets/images/DALL·E 2025-03-25 18.48.49 - A small bowl filled with fresh sofrito ingredients, including chopped onions, garlic, cilantro, and colorful bell peppers. The ingredients appear fres.webp',
+    content: 'Receta completa aquí...'
+  },
+  {
+    id: 2,
+    title: 'Cómo Dominar el Fuego en la Cocina',
+    description: '"¿Alto o bajo? Guía rápida para controlar la temperatura según el plato (mangú vs. carne frita)."',
+    image: '/src/assets/images/DALL·E 2025-03-25 18.49.52 - A rustic pot on medium heat with a bubbling Dominican sancocho stew. The pot is filled with chunks of meat, corn, yuca, plantains, and vibrant vegetab.webp',
+    content: 'Receta completa aquí...'
+  },
+  {
+    id: 2,
+    title: 'Trucos para Plátanos Dorados y Crujientes',
+    description: '"Evita que se peguen o queden aceitosos con estos consejos de freído y selección de plátanos."',
+    image: '/src/assets/images/DALL·E 2025-03-25 18.51.55 - A high-resolution image of perfectly fried Dominican tostones (twice-fried green plantains) and maduros (sweet fried plantains). The tostones are gold.webp',
+    content: 'Receta completa aquí...'
+  },
+  {
+    id: 2,
+    title: 'Utensilios que Toda Cocina Dominicana Necesita –',
+    description: '"Los imprescindibles para lograr autenticidad (y dónde comprarlos si no los tienes)."',
+    image: '/src/assets/images/DALL·E 2025-03-25 18.53.06 - A high-resolution image of traditional Dominican kitchen tools_ a well-seasoned cast-iron caldero (pot) with a rustic, worn look, a wooden pilón (mort.webp',
+    content: 'Receta completa aquí...'
+  }
+];
+
+
 
 const MainPage: React.FC = () => {
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
+
 
   return (
     <Layout>
@@ -83,11 +118,7 @@ const MainPage: React.FC = () => {
         </div>
         </Header>
       <Content style={{ padding: '0 0px' }}>
-        <Breadcrumb style={{ margin: '16px 0' }}>
-          <Breadcrumb.Item>Home</Breadcrumb.Item>
-          <Breadcrumb.Item>List</Breadcrumb.Item>
-          <Breadcrumb.Item>App</Breadcrumb.Item>
-        </Breadcrumb>
+        
         <div style={{ 
 
       width: '100vw', // Ocupa el ancho completo del viewport
@@ -128,10 +159,41 @@ const MainPage: React.FC = () => {
             minHeight: 280,
             padding: 24,
             borderRadius: borderRadiusLG,
+            textAlign:'center'
+        
           }}
         >
-          Content
+          <Title >Bienvenidos a Dominican Delights </Title>
+          <Paragraph>
+            ¿Listo para cocinar con alma dominicana? ¡Sube el fuego y vamos!
+          </Paragraph>
+
+          <Row gutter={[16, 16]} style={{ marginBottom: '30px' }}>
+          {recipes.map((recipe) => (
+            <Col xs={24} sm={12} md={8} lg={6} key={recipe.id}>
+              <Card
+                hoverable
+                cover={
+                  <Image
+                    alt={recipe.title}
+                    src={recipe.image}
+                    height={200}
+                    style={{ objectFit: 'cover' }}
+                    preview={false}
+                  />
+                }  
+              >
+                <Card.Meta
+                  title={recipe.title}
+                  description={recipe.description}
+                />
+              </Card>
+            </Col>
+          ))}
+        </Row>
         </div>
+
+
       </Content>
       <Footer style={{ textAlign: 'center' }}>
         Ant Design ©{new Date().getFullYear()} Created by Ant UED
